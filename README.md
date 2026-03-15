@@ -4,24 +4,31 @@
 
 ## Overview
 
-A Node.js/Express web application demonstrating authentication and state management using:
+A server-side web application built with Node.js and Express that demonstrates user authentication, session persistence, and client-side state management using signed cookies.
 
-- **express-session** — server-side session to track logged-in users
-- **cookie-parser** — signed cookies to persist theme preference across sessions
-- **Handlebars (hbs)** — server-side templating
-- **dotenv** — environment variable management
+The app supports multiple user accounts with unique profile data. After logging in, users are redirected to a protected profile page that displays their personal information. A dark/light mode toggle persists across sessions and even after logout using a signed, httpOnly cookie.
+
+### Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Express.js |
+| Template Engine | Handlebars (hbs) |
+| Session Management | express-session |
+| Cookie Handling | cookie-parser |
+| Environment Variables | dotenv |
 
 ---
 
 ## Demo Accounts
 
-| Username      | Password       |
-|---------------|----------------|
-| admin         | password123    |
-| student_dev   | dev_password   |
-| fong_bunsong  | bunsong@123    |
-| superman      | sol-7cape!     |
-| batman        | gthm-9veil!    |
+| Username | Password |
+|---|---|
+| admin | password123 |
+| student_dev | dev_password |
+| fong_bunsong | bunsong@123 |
+| superman | KalEl@Metropolis88 |
+| batman | Wayne@Midnight77 |
 
 ---
 
