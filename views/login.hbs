@@ -1,0 +1,55 @@
+<section class="panel login-panel">
+  <h2 class="panel-title">Welcome Back</h2>
+  <p class="panel-subtitle">Sign in to access your profile dashboard.</p>
+
+  {{#if error}}
+    <div class="alert" role="alert">{{error}}</div>
+  {{/if}}
+
+  <form method="POST" action="/login" class="auth-form">
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" placeholder="Enter username" required>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" placeholder="Enter password" required>
+
+    <button type="submit" class="btn primary full">Sign In</button>
+  </form>
+
+  <details class="sample-users" open>
+    <summary>Demo Accounts</summary>
+
+    <div class="demo-table-wrap">
+      <table class="demo-table">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>admin</td>
+            <td>password123</td>
+          </tr>
+          <tr>
+            <td>student_dev</td>
+            <td>dev_password</td>
+          </tr>
+          <tr>
+            <td>fong_bunsong</td>
+            <td>bunsong@123</td>
+          </tr>
+          <tr>
+            <td>superman</td>
+            <td>KalEl@Metropolis88</td>
+          </tr>
+          <tr>
+            <td>batman</td>
+            <td>Wayne@Midnight77</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+</section>

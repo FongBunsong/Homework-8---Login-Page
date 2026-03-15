@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{pageTitle}} | Campus Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="theme-{{theme}}">
+  <div class="backdrop-shape shape-one"></div>
+  <div class="backdrop-shape shape-two"></div>
+
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <span class="brand-pill">FONG BUNSONG</span>
+        <h1 class="brand-title">BSG Community Identity Portal</h1>
+      </div>
+
+      <nav class="top-actions">
+        <a class="btn ghost" href="/toggle-theme">Toggle {{#if (eq theme "light")}}Dark{{else}}Light{{/if}} Mode</a>
+        {{#if user}}
+          <a class="btn subtle" href="/profile">Profile</a>
+          <a class="btn danger" href="/logout">Logout</a>
+        {{/if}}
+      </nav>
+    </header>
+
+    <main class="content-card">
+      {{#if (eq page "login")}}
+        {{> login}}
+      {{/if}}
+
+      {{#if (eq page "profile")}}
+        {{> profile}}
+      {{/if}}
+    </main>
+  </div>
+</body>
+</html>

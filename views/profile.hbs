@@ -1,0 +1,101 @@
+<section class="panel profile-panel">
+  <h2 class="panel-title">Profile Overview</h2>
+  <p class="panel-subtitle">Your authenticated session is active.</p>
+
+  <div class="profile-header">
+    <img class="profile-photo" src="{{user.photo}}" alt="{{user.fullName}} profile photo">
+  </div>
+
+  <h3 class="profile-name">{{user.fullName}}</h3>
+
+  {{#if user.role}}
+    <p class="profile-role">{{user.role}}</p>
+  {{/if}}
+
+  <div class="profile-meta">
+    {{#if user.location}}
+      <span class="meta-pill">Location: {{user.location}}</span>
+    {{/if}}
+    {{#if user.status}}
+      <span class="meta-pill">Status: {{user.status}}</span>
+    {{/if}}
+  </div>
+
+  <div class="profile-grid">
+    <div class="profile-item">
+      <span class="label">Full Name</span>
+      <p>{{user.fullName}}</p>
+    </div>
+
+    <div class="profile-item">
+      <span class="label">Email</span>
+      <p>{{user.email}}</p>
+    </div>
+
+    <div class="profile-item full-width">
+      <span class="label">Bio</span>
+      <p>{{user.bio}}</p>
+    </div>
+
+    {{#if user.interest}}
+      <div class="profile-item full-width">
+        <span class="label">Interest</span>
+        <p>{{user.interest}}</p>
+      </div>
+    {{/if}}
+
+    {{#if user.favoriteFood}}
+      <div class="profile-item full-width">
+        <span class="label">Favorite Food</span>
+        <p>{{user.favoriteFood}}</p>
+      </div>
+    {{/if}}
+
+    {{#if user.skills}}
+      <div class="profile-item full-width">
+        <span class="label">Skills</span>
+        <p>{{user.skills}}</p>
+      </div>
+    {{/if}}
+
+    {{#if user.highlights}}
+      <div class="profile-item full-width">
+        <span class="label">Highlights</span>
+        <ul class="list-clean">
+          {{#each user.highlights}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+
+    {{#if user.projects}}
+      <div class="profile-item full-width">
+        <span class="label">Projects</span>
+        <div class="project-list">
+          {{#each user.projects}}
+            <article class="project-card">
+              <h4 class="project-title">{{this.name}}</h4>
+              <p>{{this.summary}}</p>
+              <p class="project-tech">{{this.tech}}</p>
+            </article>
+          {{/each}}
+        </div>
+      </div>
+    {{/if}}
+
+    {{#if user.rivals}}
+      <div class="profile-item full-width">
+        <span class="label">Rivals</span>
+        <p>{{user.rivals}}</p>
+      </div>
+    {{/if}}
+
+    {{#if user.coursesCompleted}}
+      <div class="profile-item full-width">
+        <span class="label">Courses Completed</span>
+        <p>{{user.coursesCompleted}}</p>
+      </div>
+    {{/if}}
+  </div>
+</section>
